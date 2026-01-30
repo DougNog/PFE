@@ -50,9 +50,19 @@
 //* Formatador de Nomes para a Agenda
 
 function limpar_nome_contato(nome) {
-    let nome = prompt("insira seu nome")
-    let nome_maiuscula = nome.toUpperCase()
-    alert(nome_maiuscula)
+    let nome_normal = prompt("insira seu nome")
+    let nome_sem_espaço = nome_normal.trim()
+    let nome_maiuscula = nome_sem_espaço.toUpperCase()
+    let conta_palavras = nome_maiuscula.split("")
+    alert("seu nome é " + nome_maiuscula)
+    alert("E tem " + conta_palavras.length + " letras")
 }
 
 limpar_nome_contato()
+
+//!!--------------!!//
+//!! EXERCICIO 4 !!//
+//!!------------!!//
+
+//* Contador de dias para envento
+
