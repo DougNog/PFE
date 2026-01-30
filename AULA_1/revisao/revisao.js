@@ -4,9 +4,9 @@
 
 //* Verificador de Turno e Prioridade
 
-let hora = Number(prompt("digite a hora de 0 a 23"))
+// let hora = Number(prompt("digite a hora de 0 a 23"))
 
-let prioridade = Number(prompt("digite a proiridade de 0 a 10"))
+// let prioridade = Number(prompt("digite a proiridade de 0 a 10"))
 
 // if (hora < 12 || hora <= 17 && prioridade >= 8) {
 //     alert('TAREFA CRÍTICA/URGENTE')
