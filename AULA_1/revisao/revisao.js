@@ -49,16 +49,16 @@
 
 //* Formatador de Nomes para a Agenda
 
-function limpar_nome_contato(nome) {
-    let nome_normal = prompt("insira seu nome")
-    let nome_sem_espaço = nome_normal.trim()
-    let nome_maiuscula = nome_sem_espaço.toUpperCase()
-    let conta_palavras = nome_maiuscula.split("")
-    alert("seu nome é " + nome_maiuscula)
-    alert("E tem " + conta_palavras.length + " letras")
-}
+// function limpar_nome_contato(nome) {
+//     let nome_normal = prompt("insira seu nome")
+//     let nome_sem_espaço = nome_normal.trim()
+//     let nome_maiuscula = nome_sem_espaço.toUpperCase()
+//     let conta_palavras = nome_maiuscula.split("")
+//     alert("seu nome é " + nome_maiuscula)
+//     alert("E tem " + conta_palavras.length + " letras")
+// }
 
-limpar_nome_contato()
+// limpar_nome_contato()
 
 //!!--------------!!//
 //!! EXERCICIO 4 !!//
@@ -66,3 +66,14 @@ limpar_nome_contato()
 
 //* Contador de dias para envento
 
+let entrada_data_usuario = prompt("Insira a data do evento (AAAA-MM-DD)")
+let data_hoje = new Date()
+let data_evento = new Date(entrada_data_usuario)
+let diferenca_datas = data_evento - data_hoje
+let dias = Math.ceil(diferenca_datas / (1000 * 60 * 60 * 24));
+
+if (isNaN(data_evento)) {
+    alert("Data invalida")
+} else {
+    alert("Faltam " + dias + " dias para o evento")
+}
