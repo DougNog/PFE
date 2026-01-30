@@ -4,14 +4,13 @@
 
 //* Verificador de Turno e Prioridade
 
-// let hora = prompt("digite a hora de 0 a 23")
+let hora = Number(prompt("digite a hora de 0 a 23"))
 
-// let prioridade = prompt("digite a proiridade de 0 a 10")
-
+let prioridade = Number(prompt("digite a proiridade de 0 a 10"))
 
 // if (hora < 12 || hora <= 17 && prioridade >= 8) {
 //     alert('TAREFA CRÍTICA/URGENTE')
-// } else if (hora < 12 || hora <= 17 && prioridade >= 7 || prioridade < 9) {
+// } else if (prioridade >= 7 && prioridade < 9 && (hora >= 0 && hora <= 17)) {
 //     alert('TAREFA IMPORTANTE')
 // } else if (hora => 17) {
 //     alert('TAREFA NÃO IMPORTANTE')
@@ -84,19 +83,19 @@
 
 //* Varredura de compromissos (loops)
 
-let agenda_horarios = [8, 12, 25, 15, -2, 20]
+// let agenda_horarios = [8, 12, 25, 15, -2, 20]
 
-for (let n = 0; n < agenda_horarios.length; n++) {
-    let horario = agenda_horarios[n]
+// for (let n = 0; n < agenda_horarios.length; n++) {
+//     let horario = agenda_horarios[n]
 
-    if (horario >= 0 && horario <= 23) {
-        alert("Seu compromisso foi agendado para as " + horario + "h")
-    } else {
-        alert("Atenção, o horario " + horario + "h é invalido")
-    }
-}
+//     if (horario >= 0 && horario <= 23) {
+//         alert("Seu compromisso foi agendado para as " + horario + "h")
+//     } else {
+//         alert("Atenção, o horario " + horario + "h é invalido")
+//     }
+// }
 
-//!!-----------------!!//
-//!! EXERCICIO EXTRA!!//
 //!!---------------!!//
+//!! DESAFIO EXTRA!!//
+//!!-------------!!//
 
