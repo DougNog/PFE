@@ -66,14 +66,37 @@
 
 //* Contador de dias para envento
 
-let entrada_data_usuario = prompt("Insira a data do evento (AAAA-MM-DD)")
-let data_hoje = new Date()
-let data_evento = new Date(entrada_data_usuario)
-let diferenca_datas = data_evento - data_hoje
-let dias = Math.ceil(diferenca_datas / (1000 * 60 * 60 * 24));
+// let entrada_data_usuario = prompt("Insira a data do evento (AAAA-MM-DD)")
+// let data_hoje = new Date()
+// let data_evento = new Date(entrada_data_usuario)
+// let diferenca_datas = data_evento - data_hoje
+// let dias = Math.ceil(diferenca_datas / (1000 * 60 * 60 * 24));
 
-if (isNaN(data_evento)) {
-    alert("Data invalida")
-} else {
-    alert("Faltam " + dias + " dias para o evento")
+// if (isNaN(data_evento)) {
+//     alert("Data invalida")
+// } else {
+//     alert("Faltam " + dias + " dias para o evento")
+// }
+
+//!!--------------!!//
+//!! EXERCICIO 5 !!//
+//!!------------!!//
+
+//* Varredura de compromissos (loops)
+
+let agenda_horarios = [8, 12, 25, 15, -2, 20]
+
+for (let n = 0; n < agenda_horarios.length; n++) {
+    let horario = agenda_horarios[n]
+
+    if (horario >= 0 && horario <= 23) {
+        alert("Seu compromisso foi agendado para as " + horario + "h")
+    } else {
+        alert("Atenção, o horario " + horario + "h é invalido")
+    }
 }
+
+//!!-----------------!!//
+//!! EXERCICIO EXTRA!!//
+//!!---------------!!//
+
