@@ -8,10 +8,12 @@
     margin-bottom: 30px;
 }
 
-#div_ex1 {
+.div_ex {
     text-align: center;
     border: solid black 3px;
     border-radius: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 #celcius {
@@ -28,3 +30,16 @@
     background-color: aqua;
 }
 
+#titulo_ex2 {
+    text-align: center;
+}
+
+#inp_cor {
+    margin-bottom: 25px;
+}
+
+#card {
+    border: solid black 3px;
+    width: 500px;
+    padding-left: 400px;
+}
