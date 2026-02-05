@@ -1,7 +1,57 @@
+#header {
+    text-align: center;
+    border: solid black 3px;
+    margin-bottom: 30px;
+}
+
+#div_ex1 {
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+#div_ex2 {
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+#celsius {
+    padding: 10px;
+    font-size: 16px;
+    width: 209px
+}
+
 .quente {
     background-color: red;
 }
 
 .frio {
     background-color: aqua;
+}
+
+#titulo_ex2 {
+    text-align: center;
+}
+
+#inp_cor {
+    margin-bottom: 25px;
+}
+
+#card {
+    border: solid black 3px;
+    width: 500px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical */
+    align-items: center;     /* horizontal */
+
+    margin: 0 auto; /* centraliza o card na página */
+    margin-top: 20px;
 }

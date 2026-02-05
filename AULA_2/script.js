@@ -31,7 +31,6 @@ cargo_input.addEventListener("input", () =>{
     cargo_card.innerText = cargo_input.value || "Seu Cargo";
 });
 
-color_input.addEventListener("input", () =>{
-    card.style.setProperty("--card-color", color_input.value);
+color_input.addEventListener("input", () => {
+    card.style.backgroundColor = color_input.value; // mais simples
 });
-
