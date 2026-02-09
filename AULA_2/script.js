@@ -32,5 +32,5 @@ cargo_input.addEventListener("input", () =>{
 });
 
 color_input.addEventListener("input", () => {
-    card.style.backgroundColor = color_input.value; // mais simples
+    card.style.backgroundColor = color_input.value; 
 });
