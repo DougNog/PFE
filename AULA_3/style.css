@@ -1,9 +1,18 @@
-
+body {
+    display: flex;
+    justify-content: center; /** Horizontal */
+    align-items: center; /** Vertical */
+    height: 100vh; /** Altura total da tela, se necessário */
+}
 
 .nome1 {
     height: 600px;
     width: 800px;
     background-color: aquamarine;
+    display: flex;
+    align-items: center; /** Alinha Vertical */
+    flex-direction: column; /** Distribui os itens em coluna ou linha */
+    justify-content: center; /** Alinha Horizontal */
 }
 
 .nome2 {
@@ -22,7 +31,7 @@
     width: 700px;
     background-color: chartreuse;
     border: solid black;
-        display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
@@ -33,7 +42,7 @@
     width: 700px;
     background-color: cadetblue;
     border: solid black;
-        display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;

@@ -1,0 +1,50 @@
+body {
+    height: 100vh; /** Altura total da tela, se necessário */
+    display: grid;
+    place-items: center;
+}
+
+.nome1 {
+    height: 600px;
+    width: 800px;
+    background-color: aquamarine;
+    display: grid;
+    place-items: center;
+}
+
+.nome2 {
+    height: 180px;
+    width: 700px;
+    background-color: burlywood;
+    border: solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.nome3 {
+    height: 180px;
+    width: 700px;
+    background-color: chartreuse;
+    border: solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.nome4 {
+    height: 180px;
+    width: 700px;
+    background-color: cadetblue;
+    border: solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.nome5 {
+    height: 80px;
+    width: 90px;
+    background-color: coral;
+    border: solid black;
+}
