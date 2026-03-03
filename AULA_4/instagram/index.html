@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra Superior -->
+    <header class="top-bar">
+        <div class="top-bar-content">
+            <div class="logo">
+                <svg version="1.1" viewBox="0 0 512 512" width="120" height="30" xml:space="preserve">
+                    <path fill="#262626" d="M256,48C145.2,48,48,145.2,48,256s97.2,208,208,208s208-97.2,208-208S366.8,48,256,48z M256,455.1
+                        c-110.5,0-199.1-88.6-199.1-199.1S145.5,56.9,256,56.9S455.1,145.5,455.1,256S366.5,455.1,256,455.1z"/>
+                    <path fill="#262626" d="M256,113.8c-78.5,0-142.2,63.7-142.2,142.2S177.5,398.2,256,398.2S398.2,334.5,398.2,256
+                        S334.5,113.8,256,113.8z M256,369.3c-62.5,0-113.3-50.8-113.3-113.3S193.5,142.7,256,142.7S369.3,193.5,369.3,256
+                        S318.5,369.3,256,369.3z"/>
+                    <circle fill="#262626" cx="375.7" cy="136.3" r="17.8"/>
+                </svg>
+            </div>
+            <div class="search-bar">
+                <svg width="16" height="16" viewBox="0 0 512 512" fill="#8e8e8e">
+                    <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7s-12.5 2.5-17 7l-99.7 99.7c-9.4 9.4-24.6 9.4-33.9 0l-70.6-70.6c-9.4-9.4-9.4-24.6 0-33.9L188.7 85.4c9.4-9.4 24.6-9.4 33.9 0l70.6 70.6c9.4 9.4 9.4 24.6 0 33.9l-99.7 99.7c-4.5 4.5-7 10.6-7 17s2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l70.6-70.6c9.4-9.4 9.4-24.6 0-33.9zM209.3 209.3c-28.1 28.1-73.7 28.1-101.9 0s-28.1-73.7 0-101.9s73.7-28.1 101.9 0S237.5 181.2 209.3 209.3z"/>
+                </svg>
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="top-icons">
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 512 512">
+                        <path d="M256 48C145.2 48 48 145.2 48 256s97.2 208 208 208 208-97.2 208-208S366.8 48 256 48zm0 318.4c-60.8 0-110.4-49.6-110.4-110.4S195.2 145.6 256 145.6 366.4 195.2 366.4 256 316.8 366.4 256 366.4zm194.4-169.6c-16.8 0-32 13.6-32 32s15.2 32 32 32 32-13.6 32-32-15.2-32-32-32z"/>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 512 512">
+                        <path d="M256 32C132.3 32 32 132.3 32 256c0 88.4 51.6 163.7 128 204.8V448h-48c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-32c0-17.7-14.3-32-32-32h-48v-73.2c76.4-41.1 128-116.4 128-204.8C480 132.3 379.7 32 256 32z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content with Sidebar -->
+    <div class="container">
+        <main class="main-content">
+            <!-- Stories -->
+            <section class="stories-container">
+                <div class="stories">
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="User story">
+                        </div>
+                        <span>seu_story</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=2" alt="User story">
+                        </div>
+                        <span>joana_silva</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=3" alt="User story">
+                        </div>
+                        <span>maria_dev</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=4" alt="User story">
+                        </div>
+                        <span>pedro_code</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="User story">
+                        </div>
+                        <span>ana_tech</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=6" alt="User story">
+                        </div>
+                        <span>carlos_dev</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=7" alt="User story">
+                        </div>
+                        <span>julia_ui</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="User story">
+                        </div>
+                        <span>marcosux</span>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Feed -->
+        <section class="feed">
+            <!-- Post 1 -->
+            <article class="post">
+                <header class="post-header">
+                    <div class="post-user">
+                        <img src="https://i.pravatar.cc/150?img=10" alt="User avatar">
+                        <span class="username">ellen_design</span>
+                        <span class="verified">
+                            <svg width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#3897f0" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z"/>
+                                <path fill="#fff" d="M385.4 140.6l-158.8 230.6-107.4-77.2-76.6 76.6 184 184 230.8-158.8z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <button class="more-btn">
+                        <svg width="24" height="24" viewBox="0 0 512 512">
+                            <circle cx="256" cy="256" r="40" fill="#262626"/>
+                            <circle cx="256" cy="116" r="40" fill="#262626"/>
+                            <circle cx="256" cy="396" r="40" fill="#262626"/>
+                        </svg>
+                    </button>
+                </header>
+                <div class="post-image">
+                    <img src="https://picsum.photos/600/600?random=1" alt="Post image">
+                    <button class="like-overlay" onclick="toggleLike(this)">
+                        <svg width="100" height="100" viewBox="0 0 512 512">
+                            <path fill="#fff" d="M256 448c-61.6 0-118.4-34.4-152-88.8-30.4-49.2-24-109.6 14.4-152.8C151.2 161.6 206.4 144 256 144s104.8 17.6 137.6 62.4c38.4 43.2 44.8 103.6 14.4 152.8C374.4 413.6 317.6 448 256 448z" transform="scale(1, 1)"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="post-actions">
+                    <div class="action-buttons">
+                        <button class="action-btn like-btn" onclick="toggleLike(this)">
+                            <svg class="heart-icon" width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" class="heart-path" d="M256 448c-61.6 0-118.4-34.4-152-88.8-30.4-49.2-24-109.6 14.4-152.8C151.2 161.6 206.4 144 256 144s104.8 17.6 137.6 62.4c38.4 43.2 44.8 103.6 14.4 152.8C374.4 413.6 317.6 448 256 448z"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" d="M256 32C132.3 32 32 132.3 32 256c0 88.4 51.6 163.7 128 204.8V448h-48c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-32c0-17.7-14.3-32-32-32h-48v-73.2c76.4-41.1 128-116.4 128-204.8C480 132.3 379.7 32 256 32z"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" d="M448 32L32 176l128 32 128-32-64-16.8V456h48V200.8L448 32zM64 200.8l-32 8v23.2l32-8v238.4l192-48V216l-192 48V200.8zM448 200.8v238.4l-192-48V216l192-48v23.2l-32-8v-23.2l32 8z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="action-btn save-btn">
+                        <svg width="24" height="24" viewBox="0 0 512 512">
+                            <path fill="#262626" d="M32 32v448l144-32 144 32V32L176 64 32 32zm384 416l-112 24V96l112-24v336z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="post-likes">
+                    <div class="likes-avatars">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Like">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Like">
+                        <img src="https://i.pravatar.cc/150?img=13" alt="Like">
+                    </div>
+                    <span>Curtido por <strong>marcos_dev</strong> e <strong>outras 2.847 pessoas</strong></span>
+                </div>
+                <div class="post-caption">
+                    <p><strong>ellen_design</strong> Novo projeto de UI/UX! 🎨 O que acham? #design #uiux</p>
+                </div>
+                <div class="post-comments">
+                    <button class="view-comments">Ver todos os 42 comentários</button>
+                    <div class="comment">
+                        <p><strong>joana_silva</strong> Lindooo! 🔥</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>maria_dev</strong> Parabéns! Ficou incrível!</p>
+                    </div>
+                </div>
+                <div class="post-time">
+                    <span>2 HORAS ATRÁS</span>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="post">
+                <header class="post-header">
+                    <div class="post-user">
+                        <img src="https://i.pravatar.cc/150?img=15" alt="User avatar">
+                        <span class="username">tech_daily</span>
+                        <span class="verified">
+                            <svg width="14" height="14" viewBox="0 0 512 512">
+                                <path fill="#3897f0" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z"/>
+                                <path fill="#fff" d="M385.4 140.6l-158.8 230.6-107.4-77.2-76.6 76.6 184 184 230.8-158.8z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <button class="more-btn">
+                        <svg width="24" height="24" viewBox="0 0 512 512">
+                            <circle cx="256" cy="256" r="40" fill="#262626"/>
+                            <circle cx="256" cy="116" r="40" fill="#262626"/>
+                            <circle cx="256" cy="396" r="40" fill="#262626"/>
+                        </svg>
+                    </button>
+                </header>
+                <div class="post-image">
+                    <img src="https://picsum.photos/600/600?random=2" alt="Post image">
+                    <button class="like-overlay" onclick="toggleLike(this)">
+                        <svg width="100" height="100" viewBox="0 0 512 512">
+                            <path fill="#fff" d="M256 448c-61.6 0-118.4-34.4-152-88.8-30.4-49.2-24-109.6 14.4-152.8C151.2 161.6 206.4 144 256 144s104.8 17.6 137.6 62.4c38.4 43.2 44.8 103.6 14.4 152.8C374.4 413.6 317.6 448 256 448z" transform="scale(1, 1)"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="post-actions">
+                    <div class="action-buttons">
+                        <button class="action-btn like-btn" onclick="toggleLike(this)">
+                            <svg class="heart-icon" width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" class="heart-path" d="M256 448c-61.6 0-118.4-34.4-152-88.8-30.4-49.2-24-109.6 14.4-152.8C151.2 161.6 206.4 144 256 144s104.8 17.6 137.6 62.4c38.4 43.2 44.8 103.6 14.4 152.8C374.4 413.6 317.6 448 256 448z"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" d="M256 32C132.3 32 32 132.3 32 256c0 88.4 51.6 163.7 128 204.8V448h-48c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-32c0-17.7-14.3-32-32-32h-48v-73.2c76.4-41.1 128-116.4 128-204.8C480 132.3 379.7 32 256 32z"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" d="M448 32L32 176l128 32 128-32-64-16.8V456h48V200.8L448 32zM64 200.8l-32 8v23.2l32-8v238.4l192-48V216l-192 48V200.8zM448 200.8v238.4l-192-48V216l192-48v23.2l-32-8v-23.2l32 8z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="action-btn save-btn">
+                        <svg width="24" height="24" viewBox="0 0 512 512">
+                            <path fill="#262626" d="M32 32v448l144-32 144 32V32L176 64 32 32zm384 416l-112 24V96l112-24v336z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="post-likes">
+                    <div class="likes-avatars">
+                        <img src="https://i.pravatar.cc/150?img=20" alt="Like">
+                        <img src="https://i.pravatar.cc/150?img=21" alt="Like">
+                    </div>
+                    <span>Curtido por <strong>ana_tech</strong> e <strong>outras 5.123 pessoas</strong></span>
+                </div>
+                <div class="post-caption">
+                    <p><strong>tech_daily</strong> Setup do developer 💻 #coding #tech</p>
+                </div>
+                <div class="post-comments">
+                    <button class="view-comments">Ver todos os 89 comentários</button>
+                    <div class="comment">
+                        <p><strong>pedro_code</strong> Show de setup!</p>
+                    </div>
+                </div>
+                <div class="post-time">
+                    <span>5 HORAS ATRÁS</span>
+                </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="post">
+                <header class="post-header">
+                    <div class="post-user">
+                        <img src="https://i.pravatar.cc/150?img=25" alt="User avatar">
+                        <span class="username">viagem_brasil</span>
+                    </div>
+                    <button class="more-btn">
+                        <svg width="24" height="24" viewBox="0 0 512 512">
+                            <circle cx="256" cy="256" r="40" fill="#262626"/>
+                            <circle cx="256" cy="116" r="40" fill="#262626"/>
+                            <circle cx="256" cy="396" r="40" fill="#262626"/>
+                        </svg>
+                    </button>
+                </header>
+                <div class="post-image">
+                    <img src="https://picsum.photos/600/600?random=3" alt="Post image">
+                    <button class="like-overlay" onclick="toggleLike(this)">
+                        <svg width="100" height="100" viewBox="0 0 512 512">
+                            <path fill="#fff" d="M256 448c-61.6 0-118.4-34.4-152-88.8-30.4-49.2-24-109.6 14.4-152.8C151.2 161.6 206.4 144 256 144s104.8 17.6 137.6 62.4c38.4 43.2 44.8 103.6 14.4 152.8C374.4 413.6 317.6 448 256 448z" transform="scale(1, 1)"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="post-actions">
+                    <div class="action-buttons">
+                        <button class="action-btn like-btn" onclick="toggleLike(this)">
+                            <svg class="heart-icon" width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" class="heart-path" d="M256 448c-61.6 0-118.4-34.4-152-88.8-30.4-49.2-24-109.6 14.4-152.8C151.2 161.6 206.4 144 256 144s104.8 17.6 137.6 62.4c38.4 43.2 44.8 103.6 14.4 152.8C374.4 413.6 317.6 448 256 448z"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" d="M256 32C132.3 32 32 132.3 32 256c0 88.4 51.6 163.7 128 204.8V448h-48c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-32c0-17.7-14.3-32-32-32h-48v-73.2c76.4-41.1 128-116.4 128-204.8C480 132.3 379.7 32 256 32z"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <path fill="#262626" d="M448 32L32 176l128 32 128-32-64-16.8V456h48V200.8L448 32zM64 200.8l-32 8v23.2l32-8v238.4l192-48V216l-192 48V200.8zM448 200.8v238.4l-192-48V216l192-48v23.2l-32-8v-23.2l32 8z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="action-btn save-btn">
+                        <svg width="24" height="24" viewBox="0 0 512 512">
+                            <path fill="#262626" d="M32 32v448l144-32 144 32V32L176 64 32 32zm384 416l-112 24V96l112-24v336z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="post-likes">
+                    <div class="likes-avatars">
+                        <img src="https://i.pravatar.cc/150?img=30" alt="Like">
+                        <img src="https://i.pravatar.cc/150?img=31" alt="Like">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Like">
+                    </div>
+                    <span>Curtido por <strong>carlos_dev</strong> e <strong>outras 8.934 pessoas</strong></span>
+                </div>
+                <div class="post-caption">
+                    <p><strong>viagem_brasil</strong> Pôr do sol no Rio de Janeiro 🌅 #brasil #riodejaneiro</p>
+                </div>
+                <div class="post-comments">
+                    <button class="view-comments">Ver todos os 156 comentários</button>
+                    <div class="comment">
+                        <p><strong>julia_ui</strong> Linda essa vista!</p>
+                    </div>
+                </div>
+                <div class="post-time">
+                    <span>8 HORAS ATRÁS</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Barra Lateral -->
+    <aside class="sidebar">
+        <div class="sidebar-user">
+            <img src="https://i.pravatar.cc/150?img=1" alt="User">
+            <div class="user-info">
+                <span class="username">seu_perfil</span>
+                <span class="fullname">Seu Nome</span>
+            </div>
+            <button class="switch-btn">Mudar</button>
+        </div>
+
+        <div class="sidebar-header">
+            <span>Sugestões para você</span>
+            <button class="see-all">Ver tudo</button>
+        </div>
+
+        <div class="suggestions">
+            <div class="suggestion">
+                <img src="https://i.pravatar.cc/150?img=40" alt="Suggestion">
+                <div class="user-info">
+                    <span class="username">dev_frontend</span>
+                    <span class="suggestion-info">Seguido por joana_silva</span>
+                </div>
+                <button class="follow-btn">Seguir</button>
+            </div>
+            <div class="suggestion">
+                <img src="https://i.pravatar.cc/150?img=41" alt="Suggestion">
+                <div class="user-info">
+                    <span class="username">design_ux</span>
+                    <span class="suggestion-info">Seguido por maria_dev</span>
+                </div>
+                <button class="follow-btn">Seguir</button>
+            </div>
+            <div class="suggestion">
+                <img src="https://i.pravatar.cc/150?img=42" alt="Suggestion">
+                <div class="user-info">
+                    <span class="username">code_master</span>
+                    <span class="suggestion-info">Novo no Instagram</span>
+                </div>
+                <button class="follow-btn">Seguir</button>
+            </div>
+            <div class="suggestion">
+                <img src="https://i.pravatar.cc/150?img=43" alt="Suggestion">
+                <div class="user-info">
+                    <span class="username">tech_tips</span>
+                    <span class="suggestion-info">Seguido por pedro_code</span>
+                </div>
+                <button class="follow-btn">Seguir</button>
+            </div>
+            <div class="suggestion">
+                <img src="https://i.pravatar.cc/150?img=44" alt="Suggestion">
+                <div class="user-info">
+                    <span class="username">web_dev</span>
+                    <span class="suggestion-info">Seguido por ana_tech</span>
+                </div>
+                <button class="follow-btn">Seguir</button>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <nav class="footer-links">
+                <a href="#">Sobre</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Imprensa</a>
+                <a href="#">API</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Localizações</a>
+            </nav>
+            <p class="copyright">© 2024 INSTAGRAM FROM META</p>
+        </div>
+    </aside>
+    </div>
+
+    <!-- Barra de Navegação Mobile -->
+    <nav class="bottom-nav">
+        <button class="nav-btn">
+            <svg width="24" height="24" viewBox="0 0 512 512">
+                <path fill="#262626" d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 398.7c-96.5 0-174.7-78.2-174.7-174.7S159.5 81.3 256 81.3s174.7 78.2 174.7 174.7-78.2 174.7-174.7 174.7z"/>
+            </svg>
+        </button>
+        <button class="nav-btn">
+            <svg width="24" height="24" viewBox="0 0 512 512">
+                <path fill="#262626" d="M497.4 4.6l-70.7 70.7c-44.1 44.1-116.7 44.1-160.7 0L256 84.5l-10.1-10.1c-44.1-44.1-116.7-44.1-160.7 0L4.6 497.4c-44.1 44.1-44.1 116.7 0 160.7l70.7 70.7c44.1 44.1 116.7 44.1 160.7 0l10.1 10.1 10.1-10.1c44.1-44.1 116.7-44.1 160.7 0l70.7 70.7c44.1 44.1 116.7 44.1 160.7 0l70.7-70.7c44.1-44.1 44.1-116.7 0-160.7z"/>
+            </svg>
+        </button>
+        <button class="nav-btn">
+            <svg width="24" height="24" viewBox="0 0 512 512">
+                <path fill="#262626" d="M32 32v448l144-32 144 32V32L176 64 32 32zm384 416l-112 24V96l112-24v336z"/>
+            </svg>
+        </button>
+        <button class="nav-btn">
+            <svg width="24" height="24" viewBox="0 0 512 512">
+                <path fill="#262626" d="M256 48C145.2 48 48 145.2 48 256s97.2 208 208 208 208-97.2 208-208S366.8 48 256 48zm0 318.4c-60.8 0-110.4-49.6-110.4-110.4S195.2 145.6 256 145.6 366.4 195.2 366.4 256 316.8 366.4 256 366.4z"/>
+            </svg>
+        </button>
+        <div class="nav-user">
+            <img src="https://i.pravatar.cc/150?img=1" alt="User">
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
