@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra Superior -->
+    <header class="top-bar">
+        <div class="top-bar-content">
+            <div class="logo">
+                <h1>Instagram</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="top-icons">
+                <button class="icon-btn"></button>
+                <button class="icon-btn"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteudo Principal -->
+    <div class="container">
+        <main class="main-content">
+            <!-- Stories -->
+            <section class="stories-container">
+                <div class="stories">
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="img/img_perfil.png" alt="User story">
+                        </div>
+                        <span>pele_oficial</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="img/lulinha.jpg" alt="User story">
+                        </div>
+                        <span>Lulinha</span>
+                    </div>
+                    <div class="story">
+                        <div class="story-ring">
+                            <img src="img/moon_lord.jpeg" alt="User story">
+                        </div>
+                        <span>chorasso</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feed -->
+            <section class="feed">
+                <!-- Publicacao 1 -->
+                <article class="post">
+                    <header class="post-header">
+                        <div class="post-user">
+                            <img src="img/img_perfil.png" alt="User avatar">
+                            <span class="username">Samu Dela 👺🥋</span>
+                        </div>
+                        <button class="more-btn">...</button>
+                    </header>
+                    <div class="post-image">
+                        <img src="img/samu_drake.jpeg" alt="Post image">
+                    </div>
+                    <div class="post-actions">
+                        <div class="action-buttons">
+                            <button class="action-btn like-btn" onclick="toggleLike(this)"></button>
+                            <button class="action-btn"></button>
+                            <button class="action-btn"></button>
+                        </div>
+                        <button class="action-btn save-btn"></button>
+                    </div>
+                    <div class="post-likes">
+                        <span>Curtido por <strong>marcos_dev</strong> e <strong>outras 2.847 pessoas</strong></span>
+                    </div>
+                    <div class="post-caption">
+                        <p><strong>Samu Dela 👺🥋:</strong>Curtindo a tranquilidade da praia #vivendonapaz #ondeainvejanãoalcança</p>
+                    </div>
+                    <div class="post-comments">
+                        <button class="view-comments">Ver todos os 42 comentarios</button>
+                        <div class="comment">
+                            <p><strong>Marques:</strong> Lindooo!</p>
+                        </div>
+                        <div class="comment">
+                            <p><strong>Otavio:</strong> Parabens! Ficou incrivel!</p>
+                        </div>
+                    </div>
+                    <div class="post-time">
+                        <span>2 HORAS ATRAS</span>
+                    </div>
+                </article>
+
+                <!-- Publicacao 2 -->
+                <article class="post">
+                    <header class="post-header">
+                        <div class="post-user">
+                            <img src="img/samu_perfil.jpg" alt="User avatar">
+                            <span class="username">Samu 🚑</span>
+                        </div>
+                        <button class="more-btn">...</button>
+                    </header>
+                    <div class="post-image">
+                        <img src="img/samu_bombeiro.jpeg" alt="Post image">
+                    </div>
+                    <div class="post-actions">
+                        <div class="action-buttons">
+                            <button class="action-btn like-btn" onclick="toggleLike(this)"></button>
+                            <button class="action-btn"></button>
+                            <button class="action-btn"></button>
+                        </div>
+                        <button class="action-btn save-btn"></button>
+                    </div>
+                    <div class="post-likes">
+                        <span>Curtido por <strong>ana_tech</strong> e <strong>outras 5.123 pessoas</strong></span>
+                    </div>
+                    <div class="post-caption">
+                        <p><strong>Samu 🚑:</strong>Mais uma vez salvando o dia! 💪 #willwill</p>
+                    </div>
+                    <div class="post-comments">
+                        <button class="view-comments">Ver todos os 89 comentarios</button>
+                        <div class="comment">
+                            <p><strong>dev_frontend:</strong> Meu heroi!</p>
+                        </div>
+                    </div>
+                    <div class="post-time">
+                        <span>5 HORAS ATRAS</span>
+                    </div>
+                </article>
+
+                <!-- Publicacao 3 -->
+                <article class="post">
+                    <header class="post-header">
+                        <div class="post-user">
+                            <img src="img/samu_perfil.jpg" alt="User avatar">
+                            <span class="username">Samu crl 🥶</span>
+                        </div>
+                        <button class="more-btn">...</button>
+                    </header>
+                    <div class="post-image">
+                        <img src="img/samu_norm.jpeg" alt="Post image">
+                    </div>
+                    <div class="post-actions">
+                        <div class="action-buttons">
+                            <button class="action-btn like-btn" onclick="toggleLike(this)"></button>
+                            <button class="action-btn"></button>
+                            <button class="action-btn"></button>
+                        </div>
+                        <button class="action-btn save-btn"></button>
+                    </div>
+                    <div class="post-likes">
+                        <span>Curtido por <strong>carlos_dev</strong> e <strong>outras 8.934 pessoas</strong></span>
+                    </div>
+                    <div class="post-caption">
+                        <p><strong>Samu crl 🥶:</strong>Mais um dia de trabalho! 👨‍🎓 #fizsenai</p>
+                    </div>
+                    <div class="post-comments">
+                        <button class="view-comments">Ver todos os 156 comentarios</button>
+                        <div class="comment">
+                            <p><strong>Hiron:</strong> Boaa!</p>
+                        </div>
+                    </div>
+                    <div class="post-time">
+                        <span>8 HORAS ATRAS</span>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="sidebar-user">
+                <img src="img/img_perfil.png" alt="User">
+                <div class="user-info">
+                    <span class="username">Seu Perfil</span>
+                    <span class="fullname"></span>
+                </div>
+                <button class="switch-btn">Mudar</button>
+            </div>
+
+            <div class="sidebar-header">
+                <span>Sugestões para você</span>
+                <button class="see-all">Ver tudo</button>
+            </div>
+
+            <div class="suggestions">
+                <div class="suggestion">
+                    <img src="img/samu_perfil.jpg" alt="Suggestion">
+                    <div class="user-info">
+                        <span class="username">dev_frontend</span>
+                        <span class="suggestion-info"></span>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+                <div class="suggestion">
+                    <img src="img/img_perfil.png" alt="Suggestion">
+                    <div class="user-info">
+                        <span class="username">design_ux</span>
+                        <span class="suggestion-info">Seguido por maria_dev</span>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+                <div class="suggestion">
+                    <img src="img/img_perfil.png" alt="Suggestion">
+                    <div class="user-info">
+                        <span class="username">code_master</span>
+                        <span class="suggestion-info">Novo no Instagram</span>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+                <div class="suggestion">
+                    <img src="img/img_perfil.png" alt="Suggestion">
+                    <div class="user-info">
+                        <span class="username">tech_tips</span>
+                        <span class="suggestion-info">Seguido por pedro_code</span>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="footer-links">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+                <p class="copyright"></p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Barra de Navegacao Mobile -->
+    <nav class="bottom-nav">
+        <button class="nav-btn">&#127968;</button>
+        <button class="nav-btn">&#128269;</button>
+        <button class="nav-btn">&#128190;</button>
+        <button class="nav-btn">&#128276;</button>
+        <div class="nav-user">
+            <img src="https://i.pravatar.cc/150?img=60" alt="User">
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

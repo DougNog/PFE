@@ -1,0 +1,385 @@
+/* =========================================================
+   CSS ULTRA (corrigido)
+   Correções principais:
+   1) Imagens NÃO somem quando "reduzir movimento" está ativo
+      (antes: img { opacity:0 } + animation none => invisível)
+   2) Removida duplicidade/confusão de animation no img
+      (antes: animation: enter... e depois animation-name: enter,floaty...)
+   3) :has() agora é opcional (fallback pra browsers que não suportam)
+   4) Fundo e aurora permanecem iguais
+   ========================================================= */
+
+/* Reset / base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: clamp(12px, 2.2vw, 22px);
+  --r: 18px;
+
+  /* Tamanhos responsivos */
+  --w: clamp(140px, 18vw, 240px);
+  --h: clamp(110px, 14vw, 180px);
+
+  /* Cores */
+  --a: #00d4ff;
+  --b: #7c3aed;
+  --c: #ff3d9a;
+  --d: #ffb000;
+  --mint: #22ff88;
+
+  --glass: rgba(255, 255, 255, 0.10);
+  --glass2: rgba(255, 255, 255, 0.18);
+  --stroke: rgba(255, 255, 255, 0.22);
+  --txt: rgba(255, 255, 255, 0.92);
+
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --ease2: cubic-bezier(.16,1,.3,1);
+
+  --t: 700ms;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 52px);
+  gap: var(--gap);
+
+  color: var(--txt);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(1000px 800px at 12% 18%, rgba(0,212,255,.25), transparent 60%),
+    radial-gradient(900px 700px at 88% 28%, rgba(124,58,237,.26), transparent 58%),
+    radial-gradient(850px 650px at 55% 92%, rgba(255,61,154,.22), transparent 60%),
+    linear-gradient(125deg, #05060a, #06071a 35%, #070818);
+}
+
+/* Vinheta */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 40%, transparent 0 48%, rgba(0,0,0,.55) 78%);
+  mix-blend-mode: multiply;
+  opacity: .9;
+}
+
+/* Grão (film grain) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+  opacity: .18;
+  transform: translateZ(0);
+  animation: grain 6s steps(2) infinite;
+}
+
+/* =========================================================
+   GALERIA / LAYOUT
+   ========================================================= */
+
+.gallery {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: var(--gap);
+
+  padding: clamp(14px, 3vw, 26px);
+  border-radius: calc(var(--r) + 12px);
+
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* “Energia” rodando no container */
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: -65%;
+  background:
+    conic-gradient(from 180deg,
+      transparent 0 35%,
+      rgba(0,212,255,.16) 45%,
+      rgba(255,61,154,.16) 55%,
+      rgba(255,176,0,.12) 62%,
+      transparent 72% 100%);
+  animation: spin 10s linear infinite;
+  opacity: .8;
+  pointer-events: none;
+}
+
+/* Mask pra deixar o brilho só nas bordas */
+.gallery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(800px 300px at 50% 0%, rgba(255,255,255,.10), transparent 60%);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  padding: 1px;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Fallback: se você NÃO usar .gallery, o body vira grid */
+body.no-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  align-content: center;
+}
+
+/* Se o browser suportar :has(), aplica automaticamente */
+@supports selector(:has(*)) {
+  body:not(:has(.gallery)) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    align-content: center;
+  }
+}
+
+/* =========================================================
+   CARD DA IMAGEM (corrigido)
+   ========================================================= */
+
+img {
+  width: var(--w);
+  height: var(--h);
+  object-fit: cover;
+
+  border-radius: var(--r);
+  display: block;
+
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.04);
+
+  box-shadow:
+    0 16px 48px rgba(0,0,0,.45),
+    0 0 0 0 rgba(34,255,136,0);
+
+  position: relative;
+  isolation: isolate;
+
+  /* Visível por padrão (pra nunca sumir) */
+  opacity: 1;
+  transform: perspective(1000px) translateY(0) scale(1);
+
+  transition:
+    transform var(--t) var(--ease2),
+    box-shadow var(--t) var(--ease),
+    filter var(--t) var(--ease);
+}
+
+/* Entrada + flutuação (aqui SIM controlado em um único lugar) */
+@media (prefers-reduced-motion: no-preference) {
+  img {
+    opacity: 0;
+    transform: perspective(1000px) translateY(12px) scale(.98);
+
+    animation-name: enter, floaty;
+    animation-duration: 850ms, 5.8s;
+    animation-delay: var(--dly, 0ms), calc(var(--dly, 0ms) + 900ms);
+    animation-timing-function: var(--ease2), ease-in-out;
+    animation-fill-mode: forwards, both;
+    animation-iteration-count: 1, infinite;
+  }
+}
+
+/* Delays */
+img:nth-child(1) { --dly: 60ms; }
+img:nth-child(2) { --dly: 140ms; }
+img:nth-child(3) { --dly: 220ms; }
+img:nth-child(4) { --dly: 300ms; }
+img:nth-child(5) { --dly: 380ms; }
+img:nth-child(6) { --dly: 460ms; }
+img:nth-child(7) { --dly: 540ms; }
+img:nth-child(8) { --dly: 620ms; }
+
+/* Borda animada (conic) */
+img::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--r) + 2px);
+
+  background: conic-gradient(
+    from var(--ang, 0deg),
+    rgba(0,212,255,0),
+    rgba(0,212,255,.55),
+    rgba(124,58,237,.55),
+    rgba(255,61,154,.55),
+    rgba(255,176,0,.45),
+    rgba(0,212,255,0)
+  );
+
+  filter: blur(10px);
+  opacity: .55;
+  z-index: -1;
+
+  animation: border-spin 4.5s linear infinite;
+}
+
+/* Spotlight + sheen */
+img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background:
+    radial-gradient(140px 90px at 20% 15%, rgba(255,255,255,.26), transparent 60%),
+    linear-gradient(115deg, transparent 0 30%, rgba(255,255,255,.20) 45%, transparent 60% 100%);
+  opacity: .22;
+  mix-blend-mode: screen;
+  transform: translateX(-18%) skewX(-14deg);
+  animation: sheen 3.2s var(--ease) infinite;
+  pointer-events: none;
+}
+
+/* Hover */
+img:hover {
+  transform:
+    perspective(1100px)
+    rotateX(8deg)
+    rotateY(-10deg)
+    translateY(-10px)
+    scale(1.06);
+
+  filter: saturate(1.25) contrast(1.06) brightness(1.03);
+
+  box-shadow:
+    0 28px 90px rgba(0,0,0,.60),
+    0 0 0 7px rgba(34,255,136,.18),
+    0 0 42px rgba(0,212,255,.18),
+    0 0 64px rgba(255,61,154,.12);
+}
+
+img:hover::after {
+  opacity: .35;
+  animation-duration: 1.8s;
+}
+
+img:hover::before {
+  opacity: .80;
+  filter: blur(12px);
+  animation-duration: 2.7s;
+}
+
+img:active {
+  transform:
+    perspective(1100px)
+    rotateX(0deg)
+    rotateY(0deg)
+    translateY(-4px)
+    scale(1.02);
+  transition-duration: 160ms;
+}
+
+img:focus {
+  outline: none;
+}
+img:focus-visible {
+  box-shadow:
+    0 28px 90px rgba(0,0,0,.60),
+    0 0 0 7px rgba(34,255,136,.25),
+    0 0 60px rgba(34,255,136,.15);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  :root { --r: 16px; }
+  .gallery { padding: 14px; }
+}
+
+@media (max-width: 520px) {
+  :root { --r: 14px; }
+  body { padding: 16px; }
+}
+
+/* Reduz movimento (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  body::after { display: none; }
+
+  /* garante que nunca some */
+  img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Keyframes */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes border-spin {
+  0%   { --ang: 0deg; }
+  100% { --ang: 360deg; }
+}
+
+@keyframes sheen {
+  0%   { transform: translateX(-22%) skewX(-14deg); }
+  55%  { transform: translateX(22%)  skewX(-14deg); }
+  100% { transform: translateX(22%)  skewX(-14deg); }
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) translateY(18px) scale(.96);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes floaty {
+  0%, 100% {
+    transform: perspective(1000px) translateY(0) scale(1);
+  }
+  50% {
+    transform: perspective(1000px) translateY(-6px) scale(1.01);
+  }
+}
+
+@keyframes grain {
+  0%   { transform: translate3d(-2%, -1%, 0); }
+  25%  { transform: translate3d( 1%, -2%, 0); }
+  50%  { transform: translate3d( 2%,  1%, 0); }
+  75%  { transform: translate3d(-1%,  2%, 0); }
+  100% { transform: translate3d(-2%, -1%, 0); }
+}
