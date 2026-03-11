@@ -1,67 +1,48 @@
-// JavaScript simples
-
+// ✅ Curtir com feedback visual
 function toggleLike(botao) {
     botao.classList.toggle('liked');
+    botao.textContent = botao.classList.contains('liked') ? '❤️' : '🤍';
 }
 
-// Carousel
+// ✅ Carousel corrigido
 function moveCarousel(btn, direction) {
-    // Find carousel container
-    var carouselContainer = btn.parentElement;
-    while (carouselContainer && !carouselContainer.classList.contains('carousel')) {
-        carouselContainer = carouselContainer.parentElement;
-    }
-    
+    var carouselContainer = btn.closest('.carousel');
     if (!carouselContainer) return;
-    
+
     var imagesContainer = carouselContainer.querySelector('.carousel-images');
-    var images = carouselContainer.querySelectorAll('.carousel-images img');
+    var totalImages = carouselContainer.querySelectorAll('.carousel-images img').length;
     var dots = carouselContainer.querySelectorAll('.dot');
-    
-    // Get current index from data attribute or default to 0
-    var currentIndex = parseInt(imagesContainer.getAttribute('data-current')) || 0;
-    
-    var newIndex = currentIndex + direction;
-    
-    // Loop around
-    if (newIndex < 0) {
-        newIndex = images.length - 1;
-    } else if (newIndex >= images.length) {
-        newIndex = 0;
-    }
-    
-    // Move images
+
+    var currentIndex = parseInt(imagesContainer.getAttribute('data-current') || '0');
+    var newIndex = (currentIndex + direction + totalImages) % totalImages; // ✅ loop sem if/else
+
     imagesContainer.style.transform = 'translateX(-' + (newIndex * 100) + '%)';
     imagesContainer.setAttribute('data-current', newIndex);
-    
-    // Update dots
+
     dots.forEach(function(dot, index) {
         dot.classList.toggle('active', index === newIndex);
     });
 }
 
-var btnsSeguir = document.querySelectorAll('.follow-btn');
-for (var i = 0; i < btnsSeguir.length; i++) {
-    btnsSeguir[i].addEventListener('click', function() {
-        if (this.innerHTML === 'Seguir') {
-            this.innerHTML = 'Seguindo';
-        } else {
-            this.innerHTML = 'Seguir';
-        }
+// ✅ Botões Seguir
+document.querySelectorAll('.follow-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.textContent = this.textContent === 'Seguir' ? 'Seguindo' : 'Seguir';
     });
-}
+});
 
+// ✅ Ver tudo
 var btnVerTudo = document.querySelector('.see-all');
 if (btnVerTudo) {
     btnVerTudo.addEventListener('click', function() {
-        alert('Sugestoes mostradas!');
+        alert('Sugestões mostradas!');
     });
 }
 
+// ✅ Mudar conta
 var btnMudar = document.querySelector('.switch-btn');
 if (btnMudar) {
     btnMudar.addEventListener('click', function() {
         alert('Trocar de conta!');
     });
 }
-
