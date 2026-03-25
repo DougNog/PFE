@@ -27,12 +27,12 @@ function App() {
         <h1>Intervalo</h1>
 
         {/* Aqui chamamos o componente que criamos acima */}
-        <Intervalo />
+        <Intervalo hora="10" minuto="30" />
         <hr />
       </div>
 
       <div>
-        <h1>Intervalo</h1>
+        <h1>Alarme</h1>
 
         {/* Aqui chamamos o componente que criamos acima */}
         <Alarme />
@@ -53,13 +53,13 @@ function Saudacao() {
   );
 }
 
-function Intervalo() {
+function Intervalo({ hora, minuto }) {
   return (
-    <div style={{ backgroundColor: '#af01ff', padding: '10px', borderRadius: '8px', marginBottom: '10px' }}>
+    <div style={{ backgroundColor: '#65307e', padding: '10px', borderRadius: '8px', marginBottom: '10px' }}>
       <h2 style={{ color: '#007bff' }}>É hora do intervalo!</h2>
-      <p>este componente foi criado separadamente</p>
+      <h3>Hora: {hora}</h3>
+      <h3>Minuto: {minuto}</h3>
     </div>
-
   );
 }
 
