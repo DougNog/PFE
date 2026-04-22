@@ -1,0 +1,212 @@
+/* Variáveis CSS globais para cores de prioridade */
+:root {
+  --low: #28a745;     /* Verde para prioridade baixa */
+  --medium: #ffc107;  /* Amarelo para prioridade média */
+  --high: #dc3545;    /* Vermelho para prioridade alta */
+}
+
+/* Faz padding e border entrarem no cálculo total do tamanho */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+  margin: 0; /* Remove margem padrão do navegador */
+  background: black; /* Cor de fundo da página */
+  font-family: system-ui, sans-serif; /* Fonte principal */
+}
+
+/* Container principal da aplicação */
+.app-container {
+  max-width: 900px; /* Largura máxima */
+  margin: 2rem auto; /* Centraliza horizontalmente */
+  padding: 0 1rem; /* Espaçamento lateral */
+}
+
+/* Cabeçalho */
+header {
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 2rem; /* Espaço abaixo */
+}
+
+/* Título do header */
+header h1 {
+  margin-bottom: 0.3rem;
+}
+
+/* Subtítulo do header */
+header p {
+  margin-top: 0;
+  color: #666;
+}
+
+/* Formulário de criação */
+.form-section form {
+  display: flex; /* Coloca os itens lado a lado */
+  gap: 10px; /* Espaço entre os elementos */
+  background: #f8f9fa; /* Fundo claro */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Cantos arredondados */
+  margin-bottom: 15px; /* Espaço abaixo */
+}
+
+/* Input do formulário */
+.form-section input {
+  flex: 3; /* Ocupa mais espaço */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Select do formulário */
+.form-section select {
+  flex: 1; /* Ocupa menos espaço que o input */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Botão criar */
+.form-section button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #0d6efd;
+  color: white;
+  cursor: pointer;
+}
+
+/* Seção da busca */
+.search-section {
+  margin-bottom: 15px;
+}
+
+/* Input da busca */
+.search-section input {
+  width: 100%; /* Ocupa toda a largura */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Área dos filtros */
+.filter-section {
+  display: flex; /* Coloca os botões em linha */
+  justify-content: center; /* Centraliza os botões */
+  gap: 10px; /* Espaçamento entre eles */
+  margin: 20px 0; /* Espaço acima e abaixo */
+}
+
+/* Botões dos filtros */
+.filter-section button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #ddd;
+  cursor: pointer;
+}
+
+/* Botão de filtro ativo */
+.filter-section button.active {
+  background: #333;
+  color: white;
+}
+
+/* Grade de cards */
+.task-grid {
+  display: grid; /* Usa grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px; /* Espaço entre cards */
+}
+
+/* Estilo base de cada card */
+.task-card {
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 8px solid #ccc; /* Barra lateral colorida */
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column; /* Organiza em coluna */
+  justify-content: space-between;
+}
+
+/* Card de prioridade baixa */
+.task-card.baixa {
+  border-color: var(--low);
+}
+
+/* Card de prioridade média */
+.task-card.média {
+  border-color: var(--medium);
+}
+
+/* Card de prioridade alta */
+.task-card.alta {
+  border-color: var(--high);
+}
+
+/* Card concluído */
+.task-card.done {
+  opacity: 0.6; /* Deixa mais apagado */
+  background: #e9ecef;
+}
+
+/* Título da tarefa */
+.task-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Linha da prioridade */
+.task-content span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Data da tarefa */
+.task-content small {
+  color: #666;
+}
+
+/* Input usado na edição */
+.edit-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+/* Área dos botões de ação */
+.task-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; /* Quebra linha se faltar espaço */
+}
+
+/* Botões dentro do card */
+.task-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #0d6efd;
+  color: white;
+}
+
+/* Botão remover */
+.task-actions button.delete {
+  background: #ff4d4d;
+}
+
+/* Mensagem quando não existe tarefa */
+.empty-message {
+  text-align: center;
+  grid-column: 1 / -1; /* Faz ocupar toda a largura do grid */
+  color: #777;
+}

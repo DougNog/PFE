@@ -28,8 +28,14 @@ const App = () => {
 
       {/* Seção Interativa */}
       <section style={styles.card}>
-        <h2>Etapa Atual: {aulas[etapa].title}</h2>
-        <p>{aulas[etapa].desc}</p>
+
+        <h2 style = {{color: 'black'}}
+          >Etapa Atual: {aulas[etapa].title}
+        </h2>
+
+        <p style = {{color: 'blue'}}>
+          {aulas[etapa].desc}
+        </p>
         
         {/* CENTRALIZADO */}
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
