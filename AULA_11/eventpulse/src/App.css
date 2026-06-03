@@ -1,393 +1,929 @@
+/* ============================================================
+   VARIÁVEIS CSS - Cores e temas para toda a aplicação
+   ============================================================ */
+
 :root {
-  --palestra: #0284c7; /* Azul */
-  --workshop: #f59e0b; /* Âmbar/Amarelo */
-  --painel: #10b981; /* Verde */
-  --bg-encerrado: #e5e7eb;
+  /* Cores para cada tipo de evento (usadas nas bordas dos cards) */
+  --palestra: #0284c7;    /* Azul para eventos do tipo Palestra */
+  --workshop: #f59e0b;    /* Âmbar/Amarelo para eventos Workshop */
+  --painel: #10b981;      /* Verde para eventos do tipo Painel */
+  
+  /* Cor de fundo para eventos encerrados */
+  --bg-encerrado: #e5e7eb; /* Cinza claro para status Encerrado */
 }
+
+/* ============================================================
+   CONTÊINER PRINCIPAL - Estilos gerais da aplicação
+   ============================================================ */
 
 .app-container {
   max-width: 900px;
+  /* Limita a largura máxima a 900px para melhor legibilidade */
+  
   margin: 2rem auto;
+  /* Centraliza o contêiner com margem de 2rem em cima e embaixo */
+  
   padding: 0 1rem;
+  /* Padding lateral para não ficar colado nas bordas em mobile */
+  
   font-family: system-ui, -apple-system, sans-serif;
+  /* Define a fonte padrão usando system-ui (melhor performance) */
+  
   color: #1f2937;
+  /* Cor padrão do texto (cinza escuro) */
 }
 
-/* ALTERAÇÃO 1: Header com degradê marcante (azul a roxo) */
+/* ============================================================
+   ALTERAÇÃO 1: HEADER COM DEGRADÊ (Azul para Roxo)
+   ============================================================ */
+
 header {
   text-align: center;
+  /* Centraliza todo o conteúdo do header */
+  
   margin-bottom: 2.5rem;
+  /* Espaço abaixo do header antes da próxima seção */
+  
   background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
+  /* Degradê linear de azul (esquerda) a roxo (direita) em ângulo de 135 graus */
+  /* Cria um efeito visual moderno e atrativo */
+  
   padding: 2rem;
+  /* Espaço interno (padding) de 2rem em todos os lados */
+  
   border-radius: 12px;
+  /* Cantos arredondados de 12px para um visual mais suave */
+  
   color: white;
+  /* Texto branco para contraste com o fundo escuro */
+  
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* Sombra abaixo do header: deslocamento de 8px vertical, 16px de blur, 10% opacidade */
+  /* Cria profundidade no design */
 }
 
 header h1 {
   font-size: 2.5rem;
+  /* Título grande e chamativo */
+  
   margin: 0;
+  /* Remove margem padrão do h1 */
+  
   color: white;
+  /* Texto branco */
 }
 
 header p {
   color: rgba(255, 255, 255, 0.9);
+  /* Branco com 90% de opacidade (quase branco, levemente transparente) */
+  
   margin: 0.5rem 0;
+  /* Pequeno espaço acima e abaixo */
 }
 
-/* Feature 4: Botão Limpar Cronograma */
+/* ============================================================
+   FEATURE 4: BOTÃO LIMPAR CRONOGRAMA
+   ============================================================ */
+
 .clear-btn {
   margin-top: 1rem;
+  /* Espaço acima do botão */
+  
   padding: 10px 20px;
+  /* Espaço interno: 10px vertical, 20px horizontal */
+  
   background: rgba(255, 255, 255, 0.2);
+  /* Fundo branco com 20% de opacidade (semi-transparente) */
+  
   color: white;
+  /* Texto branco */
+  
   border: 2px solid white;
+  /* Borda branca de 2px */
+  
   border-radius: 6px;
+  /* Cantos arredondados */
+  
   cursor: pointer;
+  /* Muda o cursor para indicar que é clicável */
+  
   font-weight: 600;
+  /* Texto em negrito */
+  
   transition: all 0.3s ease;
+  /* Transição suave de 0.3s para todas as propriedades quando hover */
 }
 
 .clear-btn:hover {
+  /* Estilo quando o mouse passa sobre o botão */
+  
   background: white;
+  /* Fundo muda para branco sólido */
+  
   color: #7c3aed;
+  /* Texto muda para roxo */
+  /* Inverte as cores criando um efeito visual interessante */
 }
 
-/* Feature 2: Seção de pesquisa */
+/* ============================================================
+   FEATURE 2: SEÇÃO DE PESQUISA
+   ============================================================ */
+
 .search-section {
   margin: 20px 0;
+  /* Espaço acima e abaixo da seção */
+  
   display: flex;
+  /* Usa flexbox para layout flexível */
+  
   justify-content: center;
+  /* Centraliza o campo de pesquisa horizontalmente */
 }
 
 .search-input {
   width: 100%;
+  /* Usa toda a largura disponível */
+  
   max-width: 500px;
+  /* Mas não fica mais larga que 500px */
+  
   padding: 12px 16px;
+  /* Espaço interno generoso: 12px vertical, 16px horizontal */
+  
   border: 2px solid #d1d5db;
+  /* Borda cinza de 2px */
+  
   border-radius: 8px;
+  /* Cantos arredondados */
+  
   font-size: 1rem;
+  /* Tamanho padrão de fonte */
+  
   transition: border-color 0.3s;
+  /* Transição suave da cor da borda em 0.3s */
 }
 
 .search-input:focus {
+  /* Estilo quando o campo está focado (clicado/ativo) */
+  
   outline: none;
+  /* Remove o outline padrão do navegador */
+  
   border-color: #0284c7;
+  /* Borda muda para azul */
+  
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+  /* Adiciona um halo azul suave ao redor do campo */
 }
+
+/* ============================================================
+   FORMULÁRIO DE NOVO EVENTO
+   ============================================================ */
 
 .form-section form {
   display: flex;
+  /* Usa flexbox para alinhar elementos em linha */
+  
   gap: 12px;
+  /* Espaço de 12px entre cada elemento do formulário */
+  
   background: #f3f4f6;
+  /* Fundo cinza claro */
+  
   padding: 20px;
+  /* Espaço interno */
+  
   border-radius: 10px;
+  /* Cantos arredondados */
+  
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  /* Sombra bem sutil */
+  
   flex-wrap: wrap;
+  /* Permite que os elementos quebrem em múltiplas linhas em telas pequenas */
 }
 
 .form-section input {
   flex: 3;
+  /* O campo de texto ocupa 3 partes do espaço disponível */
+  
   min-width: 200px;
+  /* Largura mínima de 200px (não fica muito pequeno) */
+  
   padding: 12px;
+  /* Espaço interno */
+  
   border: 1px solid #d1d5db;
+  /* Borda cinza sutil */
+  
   border-radius: 6px;
+  /* Cantos arredondados */
+  
   font-size: 1rem;
+  /* Tamanho de fonte padrão */
 }
 
 .form-section select {
   flex: 1;
+  /* Dropdowns ocupam 1 parte do espaço disponível */
+  
   min-width: 120px;
+  /* Largura mínima de 120px */
+  
   padding: 12px;
+  /* Espaço interno */
+  
   border: 1px solid #d1d5db;
+  /* Borda cinza */
+  
   border-radius: 6px;
+  /* Cantos arredondados */
+  
   font-size: 1rem;
+  /* Tamanho de fonte padrão */
+  
   background: white;
+  /* Fundo branco */
 }
 
 .form-section button {
   padding: 12px 24px;
+  /* Espaço interno: 12px vertical, 24px horizontal */
+  
   background: #4f46e5;
+  /* Fundo roxo-azulado (indigo) */
+  
   color: white;
+  /* Texto branco */
+  
   border: none;
+  /* Sem borda */
+  
   border-radius: 6px;
+  /* Cantos arredondados */
+  
   font-weight: 600;
+  /* Texto em negrito */
+  
   cursor: pointer;
+  /* Indica que é clicável */
+  
   transition: all 0.3s ease;
+  /* Transição suave em 0.3s */
 }
 
 .form-section button:hover {
+  /* Estilo quando o mouse passa sobre o botão */
+  
   background: #4338ca;
+  /* Fundo mais escuro */
+  
   transform: translateY(-2px);
+  /* Move o botão 2px para cima (efeito de "levantamento") */
 }
+
+/* ============================================================
+   SEÇÃO DE FILTROS
+   ============================================================ */
 
 .filter-section {
   display: flex;
+  /* Layout flexível */
+  
   justify-content: center;
+  /* Centraliza os botões */
+  
   gap: 8px;
+  /* Espaço de 8px entre botões */
+  
   margin: 24px 0;
+  /* Espaço acima e abaixo */
+  
   flex-wrap: wrap;
+  /* Permite quebra em múltiplas linhas */
 }
 
 .filter-section button {
   padding: 8px 16px;
+  /* Espaço interno pequeno */
+  
   background: #f3f4f6;
+  /* Fundo cinza claro */
+  
   border: 1px solid #e5e7eb;
+  /* Borda cinza sutil */
+  
   border-radius: 20px;
+  /* Muito arredondado (tipo "pill button") */
+  
   cursor: pointer;
+  /* Indica que é clicável */
+  
   transition: all 0.2s;
+  /* Transição suave em 0.2s */
 }
 
 .filter-section button.active {
+  /* Estilo para o botão de filtro atualmente ativo */
+  
   background: #111827;
+  /* Fundo preto-cinza */
+  
   color: white;
+  /* Texto branco */
+  
   border-color: #111827;
+  /* Borda da mesma cor do fundo */
 }
 
-/* ALTERAÇÃO 2: Cards com shadow aumentada e animação no hover */
+/* ============================================================
+   ALTERAÇÃO 2: GRADE DE CARDS COM SHADOW AUMENTADA
+   ============================================================ */
+
 .event-grid {
   display: grid;
+  /* Usa CSS Grid para layout responsivo */
+  
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Cria colunas automáticas:
+     - auto-fill: preenche o espaço disponível
+     - minmax(280px, 1fr): cada coluna tem no mínimo 280px, mas pode crescer
+     - Resultado: layout responsivo que se adapta à largura da tela */
+  
   gap: 20px;
+  /* Espaço entre cards */
+  
   margin-bottom: 80px;
+  /* Espaço abaixo para o botão flutuante não cobrir nada */
 }
+
+/* ============================================================
+   ALTERAÇÃO 2 & 3: CARDS COM SHADOW AUMENTADA E ANIMAÇÃO HOVER
+   ============================================================ */
 
 .event-card {
   padding: 18px;
+  /* Espaço interno generoso */
+  
   border-radius: 8px;
+  /* Cantos arredondados */
+  
   border-top: 6px solid #ccc;
+  /* Borda superior de 6px (será sobrescrita pela cor do tipo) */
+  
   background: white;
+  /* Fundo branco */
+  
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  /* SOMBRA AUMENTADA:
+     - 0: sem deslocamento horizontal
+     - 10px: deslocamento vertical
+     - 25px: blur radius (desfoque) 
+     - 0.12: opacidade 12% preta
+     - Cria profundidade e destaque */
+  
   display: flex;
+  /* Usa flexbox */
+  
   flex-direction: column;
+  /* Coluna (conteúdo acima, botões abaixo) */
+  
   justify-content: space-between;
+  /* Espaça o conteúdo e botões */
+  
   min-height: 220px;
+  /* Altura mínima para manter uniformidade */
+  
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Transição suave com curva easing personalizada
+     - cubic-bezier(0.4, 0, 0.2, 1): cria uma animação mais natural */
+  
   cursor: pointer;
+  /* Indica que é interativo */
 }
 
-/* ALTERAÇÃO 3: Animação no hover - elevação e zoom */
+/* ============================================================
+   ALTERAÇÃO 3: ANIMAÇÃO NO HOVER (ELEVAÇÃO E ZOOM)
+   ============================================================ */
+
 .event-card:hover {
+  /* Quando o mouse passa sobre o card */
+  
   transform: translateY(-8px) scale(1.02);
+  /* Duas transformações:
+     - translateY(-8px): move o card 8px para cima
+     - scale(1.02): aumenta o tamanho em 2% (zoom leve)
+     - Resultado: card flutua para cima e cresce um pouco */
+  
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  /* Sombra aumentada quando hover
+     - Deslocamento maior (20px), blur maior (40px), opacidade aumentada (15%)
+     - Cria a ilusão de que o card está mais longe da tela */
 }
 
-/* Estilização Condicional por Tipo (Borda Superior) */
-.event-card.palestra { border-top-color: var(--palestra); }
-.event-card.workshop { border-top-color: var(--workshop); }
-.event-card.painel { border-top-color: var(--painel); }
+/* ============================================================
+   ESTILIZAÇÃO CONDICIONAL POR TIPO DE EVENTO
+   ============================================================ */
 
-/* Estilização Condicional por Status */
+.event-card.palestra { 
+  border-top-color: var(--palestra);
+  /* Borda superior azul para Palestras */
+}
+
+.event-card.workshop { 
+  border-top-color: var(--workshop);
+  /* Borda superior âmbar para Workshops */
+}
+
+.event-card.painel { 
+  border-top-color: var(--painel);
+  /* Borda superior verde para Painéis */
+}
+
+/* ============================================================
+   ESTILIZAÇÃO CONDICIONAL POR STATUS
+   ============================================================ */
+
+/* Status: EM ANDAMENTO */
 .event-card.em-andamento {
   animation: pulse 2s infinite alternate;
+  /* Anima o card com a animação "pulse" que dura 2s, repete infinito e alterna */
+  
   background: #fbfbfe;
+  /* Fundo com leve tonalidade roxa */
 }
 
 @keyframes pulse {
+  /* Define a animação "pulse" que pulsa com cor */
+  
   from {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    /* Sombra padrão no início */
   }
   to {
     box-shadow: 0 10px 35px rgba(245, 158, 11, 0.2);
+    /* Sombra com tonalidade âmbar (amarelo/laranja) no final */
+    /* Cria um efeito de "pulsação" com luz âmbar */
   }
 }
 
+/* Status: ENCERRADO */
 .event-card.encerrado {
   opacity: 0.55;
+  /* O card fica semi-transparente (55% de opacidade) */
+  /* Indica visualmente que o evento não está mais ativo */
+  
   background: var(--bg-encerrado);
+  /* Fundo cinza claro */
+  
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  /* Sombra bem sutil (quase desaparece) */
 }
+
+/* ============================================================
+   CONTEÚDO DO CARD - Textos e informações
+   ============================================================ */
 
 .event-content h3 {
   margin: 0 0 12px 0;
+  /* Remove margem padrão, deixa 12px de espaço embaixo */
+  
   font-size: 1.2rem;
+  /* Título um pouco maior que o normal */
+  
   color: #111827;
+  /* Texto cinza escuro */
 }
 
 .event-tag, .status-badge {
   display: block;
+  /* Cada uma ocupa uma linha inteira */
+  
   font-size: 0.85rem;
+  /* Texto pequeno */
+  
   margin-bottom: 4px;
+  /* Pouco espaço entre elementos */
 }
 
 .event-tag { 
-  font-weight: 500; 
-  color: #4b5563; 
+  font-weight: 500;
+  /* Negrito leve */
+  
+  color: #4b5563;
+  /* Cinza médio */
 }
 
 .status-badge { 
-  font-weight: bold; 
-  color: #1f2937; 
+  font-weight: bold;
+  /* Negrito forte */
+  
+  color: #1f2937;
+  /* Preto-cinza */
 }
 
-/* Feature 3: Badge de vagas */
+/* ============================================================
+   FEATURE 3: BADGE DE VAGAS DISPONÍVEIS
+   ============================================================ */
+
 .vagas-badge {
   display: block;
+  /* Ocupa uma linha inteira */
+  
   font-size: 0.85rem;
+  /* Texto pequeno */
+  
   font-weight: 600;
+  /* Negrito */
+  
   color: #7c3aed;
+  /* Roxo (destaca em relação ao resto) */
+  
   margin-bottom: 4px;
+  /* Pouco espaço embaixo */
 }
 
 small {
   color: #9ca3af;
+  /* Texto em cinza bem claro */
+  
   display: block;
+  /* Ocupa uma linha inteira */
+  
   margin-top: 8px;
+  /* Espaço acima */
 }
+
+/* ============================================================
+   BOTÕES DE AÇÃO DO CARD
+   ============================================================ */
 
 .event-actions {
   margin-top: 18px;
+  /* Espaço acima dos botões */
+  
   display: flex;
+  /* Flexbox para alinhar botões */
+  
   justify-content: space-between;
+  /* Distribui os botões para ocupar todo o espaço */
+  
   gap: 8px;
+  /* Pequeno espaço entre botões */
+  
   flex-wrap: wrap;
+  /* Permite quebra em múltiplas linhas em mobile */
 }
 
 .event-actions button {
   flex: 1;
+  /* Todos os botões ocupam igual espaço */
+  
   min-width: 70px;
+  /* Largura mínima para não ficar muito pequeno */
+  
   padding: 8px;
+  /* Espaço interno pequeno */
+  
   font-size: 0.9rem;
+  /* Texto um pouco menor */
+  
   border: 1px solid #d1d5db;
+  /* Borda cinza sutil */
+  
   border-radius: 4px;
+  /* Cantos pouco arredondados */
+  
   cursor: pointer;
+  /* Indica que é clicável */
+  
   transition: all 0.2s;
+  /* Transição suave rápida */
 }
 
+/* Botão de STATUS (Iniciar/Encerrar/Reiniciar) */
 .event-actions button.status-btn {
   background: #f9fafb;
+  /* Fundo bem claro (quase branco) */
+  
   font-weight: 500;
+  /* Negrito leve */
+  
   color: #1f2937;
+  /* Texto escuro */
 }
 
 .event-actions button.status-btn:hover {
   background: #e5e7eb;
+  /* Fundo mais cinzento quando hover */
 }
 
-/* Feature 3: Botão inscrever aluno */
+/* ============================================================
+   FEATURE 3: BOTÃO INSCREVER ALUNO
+   ============================================================ */
+
 .event-actions button.inscricao-btn {
   background: #10b981;
+  /* Fundo verde */
+  
   color: white;
+  /* Texto branco */
+  
   border-color: #10b981;
+  /* Borda verde */
+  
   font-weight: 500;
+  /* Negrito leve */
 }
 
 .event-actions button.inscricao-btn:hover:not(.desabilitado) {
+  /* Hover APENAS se o botão não está desabilitado */
+  
   background: #059669;
+  /* Fundo verde mais escuro */
+  
   border-color: #059669;
+  /* Borda verde mais escura */
 }
 
 .event-actions button.inscricao-btn.desabilitado {
+  /* Quando não há mais vagas */
+  
   background: #d1d5db;
+  /* Fundo cinza */
+  
   border-color: #d1d5db;
+  /* Borda cinza */
+  
   cursor: not-allowed;
+  /* Cursor muda para "não permitido" */
+  
   opacity: 0.6;
+  /* Fica semi-transparente para parecer desabilitado */
 }
+
+/* ============================================================
+   BOTÃO DELETAR EVENTO
+   ============================================================ */
 
 .event-actions button.delete {
   background: #ef4444;
+  /* Fundo vermelho */
+  
   color: white;
+  /* Texto branco */
+  
   border-color: #ef4444;
+  /* Borda vermelha */
+  
   font-weight: 500;
+  /* Negrito leve */
 }
 
 .event-actions button.delete:hover {
   background: #dc2626;
+  /* Fundo vermelho mais escuro */
+  
   border-color: #dc2626;
+  /* Borda vermelha mais escura */
 }
 
-/* Feature 5: Botão flutuante no canto inferior direito */
+/* ============================================================
+   FEATURE 5: BOTÃO FLUTUANTE NO CANTO INFERIOR DIREITO
+   ============================================================ */
+
 .floating-btn {
   position: fixed;
+  /* Fica fixo na tela (não scroll com a página) */
+  
   bottom: 30px;
+  /* 30px do fundo da tela */
+  
   right: 30px;
+  /* 30px da direita da tela */
+  
   width: 60px;
   height: 60px;
+  /* Quadrado de 60x60px */
+  
   border-radius: 50%;
+  /* 50% de border-radius = círculo perfeito */
+  
   background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
+  /* Degradê de azul a roxo (mesma do header) */
+  
   color: white;
+  /* Ícone branco */
+  
   border: none;
+  /* Sem borda */
+  
   cursor: pointer;
+  /* Indica clicável */
+  
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Sombra pronunciada */
+  
   transition: all 0.3s ease;
+  /* Transição suave */
+  
   display: flex;
+  /* Flexbox para centralizar o ícone */
+  
   align-items: center;
+  /* Centraliza verticalmente */
+  
   justify-content: center;
+  /* Centraliza horizontalmente */
+  
   z-index: 999;
+  /* Fica acima de tudo (exceto modal) */
+  
   padding: 0;
+  /* Sem padding (já tem width/height fixo) */
 }
 
 .floating-icon-img {
   width: 32px;
   height: 32px;
+  /* Ícone de 32x32px */
+  
   object-fit: contain;
+  /* A imagem cabe dentro sem distorcer */
+  
   filter: brightness(0) invert(1);
+  /* Transforma a imagem em branco (inverte as cores) */
+  /* brightness(0) deixa preto, invert(1) troca preto e branco */
 }
 
 .floating-btn:hover {
   transform: scale(1.1) translateY(-5px);
+  /* Aumenta 10% e sobe 5px */
+  
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  /* Sombra maior e mais escura */
 }
 
 .floating-btn:active {
+  /* Quando o botão é clicado */
+  
   transform: scale(0.95);
+  /* Diminui um pouco (efeito de "pressão") */
 }
 
-/* Feature 5: Modal */
+/* ============================================================
+   FEATURE 5: MODAL (Janela com informações)
+   ============================================================ */
+
 .modal-overlay {
   position: fixed;
+  /* Fica fixo na tela */
+  
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  /* Cobre a tela inteira */
+  
   background: rgba(0, 0, 0, 0.5);
+  /* Fundo preto com 50% de opacidade (escuro semi-transparente) */
+  
   display: flex;
+  /* Flexbox para centralizar */
+  
   justify-content: center;
   align-items: center;
+  /* Centraliza o modal na tela */
+  
   z-index: 1000;
+  /* Fica acima de tudo */
 }
 
 .modal-content {
   background: white;
+  /* Fundo branco */
+  
   padding: 30px;
+  /* Espaço interno generoso */
+  
   border-radius: 12px;
+  /* Cantos arredondados */
+  
   max-width: 500px;
+  /* Largura máxima */
+  
   width: 90%;
+  /* Em telas pequenas, ocupa 90% da largura */
+  
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  /* Sombra pronunciada */
+  
   position: relative;
+  /* Para o botão de fechar ficar posicionado corretamente */
+  
   max-height: 80vh;
+  /* Altura máxima de 80% da viewport (tela) */
+  
   overflow-y: auto;
+  /* Se o conteúdo for muito grande, aparece scrollbar vertical */
 }
 
+/* Botão de fechar modal (X) */
 .modal-close {
   position: absolute;
+  /* Posicionamento absoluto dentro do modal */
+  
   top: 15px;
   right: 15px;
+  /* 15px do topo e 15px da direita */
+  
   background: none;
   border: none;
+  /* Sem fundo nem borda */
+  
   font-size: 28px;
+  /* X bem grande */
+  
   cursor: pointer;
+  /* Indica clicável */
+  
   color: #9ca3af;
+  /* Cinza claro */
+  
   transition: color 0.2s;
+  /* Transição de cor suave */
 }
 
 .modal-close:hover {
   color: #1f2937;
+  /* Fica mais escuro quando hover */
 }
 
+/* Títulos do modal */
 .modal-content h2 {
   margin-top: 0;
+  /* Remove margem padrão de cima */
+  
   color: #111827;
+  /* Texto escuro */
+  
   font-size: 1.5rem;
+  /* Título grande */
 }
 
 .modal-content h3 {
   margin-top: 1.5rem;
+  /* Espaço acima */
+  
   color: #0284c7;
+  /* Azul (destaca) */
+  
   font-size: 1.1rem;
+  /* Subtítulo */
 }
 
-/* Favicon Selector Styles */
+/* ============================================================
+   LISTA DO MODAL
+   ============================================================ */
+
+.modal-content ul {
+  list-style: none;
+  /* Remove os pontos/números da lista */
+  
+  padding: 0;
+  margin: 0;
+  /* Remove margens padrão */
+}
+
+.modal-content li {
+  padding: 12px;
+  /* Espaço interno */
+  
+  margin: 10px 0;
+  /* Espaço entre itens */
+  
+  background: #f3f4f6;
+  /* Fundo cinza claro */
+  
+  border-left: 4px solid #0284c7;
+  /* Barra vertical azul na esquerda (destaque) */
+  
+  border-radius: 4px;
+  /* Cantos pouco arredondados */
+  
+  line-height: 1.6;
+  /* Altura de linha maior para legibilidade */
+}
+
+.modal-content li strong {
+  color: #0284c7;
+  /* Texto em negrito fica azul */
+}
+
+/* ============================================================
+   ESTILOS ADICIONAIS DO FAVICON (não usado no código atual)
+   ============================================================ */
+
 .favicon-selector {
   background: #f3f4f6;
   padding: 20px;
@@ -439,51 +975,47 @@ small {
   color: #7c3aed;
 }
 
-.modal-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/* ============================================================
+   RESPONSIVIDADE - Ajusta para telas pequenas (mobile)
+   ============================================================ */
 
-.modal-content li {
-  padding: 12px;
-  margin: 10px 0;
-  background: #f3f4f6;
-  border-left: 4px solid #0284c7;
-  border-radius: 4px;
-  line-height: 1.6;
-}
-
-.modal-content li strong {
-  color: #0284c7;
-}
-
-/* Responsivo */
 @media (max-width: 768px) {
+  /* Estes estilos aplicam apenas em telas com até 768px de largura */
+  
   header h1 {
     font-size: 2rem;
+    /* Título um pouco menor em mobile */
   }
 
   .form-section form {
     flex-direction: column;
+    /* Muda para coluna (um elemento por linha) */
   }
 
   .form-section input,
   .form-section select,
   .form-section button {
     flex: 1 !important;
+    /* Todos ocupam 100% da largura */
+    
     min-width: auto;
+    /* Remove largura mínima para usar todo espaço */
   }
 
   .event-grid {
     grid-template-columns: 1fr;
+    /* Uma coluna apenas (grid com 1 coluna) */
   }
 
   .floating-btn {
     bottom: 20px;
     right: 20px;
+    /* Mais perto das bordas */
+    
     width: 50px;
     height: 50px;
+    /* Um pouco menor */
+    
     font-size: 24px;
   }
 }

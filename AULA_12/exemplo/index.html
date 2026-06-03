@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EduDash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-body-secondary" style="padding-top: 56px;">
+
+    <!-- NAVBAR (fixo no topo) -->
+    <nav class="navbar bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">EduDash</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+            </form>
+            <div class="d-flex align-items-center ms-2">
+                <span class="navbar-text me-2">Admin</span>
+                <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center fw-bold"
+                    style="width: 40px; height: 40px;">A</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- SIDEBAR (some em telas menores que lg) -->
+            <div class="col-2 d-none d-lg-block bg-dark min-vh-100 pt-3 px-0" data-bs-theme="dark">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Alunos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Relatórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Configurações</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ÁREA DE CONTEÚDO PRINCIPAL -->
+            <div class="col-12 col-lg-10 p-4">
+
+                <!-- Cabeçalho + botão -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="mb-0">Painel Administrativo</h5>
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalCadastro">
+                        + Cadastrar Novo Aluno
+                    </button>
+                </div>
+
+                <!-- ALERTAS -->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Manutenção programada hoje às 23h.</strong> O sistema ficará fora do ar por aproximadamente
+                    30 minutos.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                </div>
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Nova versão disponível (v2.4.1).</strong> Acesse as notas de atualização para mais detalhes.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                </div>
+
+                <!-- CARDS DE MÉTRICAS -->
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-primary">
+                            <div class="card-body">
+                                <h6 class="card-title">Total de Alunos Ativos</h6>
+                                <p class="card-text fs-3 fw-bold">1.842</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-success">
+                            <div class="card-body">
+                                <h6 class="card-title">Cursos Publicados</h6>
+                                <p class="card-text fs-3 fw-bold">47</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-warning">
+                            <div class="card-body">
+                                <h6 class="card-title">Taxa de Retenção</h6>
+                                <p class="card-text fs-3 fw-bold">78,4%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-bg-danger">
+                            <div class="card-body">
+                                <h6 class="card-title">Chamados Abertos</h6>
+                                <p class="card-text fs-3 fw-bold">13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TABELA DE ALUNOS -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <strong>Alunos Recentes</strong>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover mb-0">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">#ID</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Curso</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">#001</th>
+                                        <td>Ana Martins</td>
+                                        <td>Desenvolvimento Web</td>
+                                        <td><span class="badge text-bg-success">Ativo</span></td>
+                                        <td><button type="button" class="btn btn-sm btn-outline-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#002</th>
+                                        <td>Carlos Ramos</td>
+                                        <td>Data Science com Python</td>
+                                        <td><span class="badge text-bg-warning">Pendente</span></td>
+                                        <td><button type="button" class="btn btn-sm btn-outline-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#003</th>
+                                        <td>Fernanda Silva</td>
+                                        <td>UI/UX Design</td>
+                                        <td><span class="badge text-bg-success">Ativo</span></td>
+                                        <td><button type="button" class="btn btn-sm btn-outline-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#004</th>
+                                        <td>Lucas Oliveira</td>
+                                        <td>Desenvolvimento Web</td>
+                                        <td><span class="badge text-bg-secondary">Inativo</span></td>
+                                        <td><button type="button" class="btn btn-sm btn-outline-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#005</th>
+                                        <td>Juliana Pereira</td>
+                                        <td>Marketing Digital</td>
+                                        <td><span class="badge text-bg-success">Ativo</span></td>
+                                        <td><button type="button" class="btn btn-sm btn-outline-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- PAGINAÇÃO alinhada à direita -->
+                    <div class="card-footer d-flex justify-content-end">
+                        <nav aria-label="Paginação de alunos">
+                            <ul class="pagination pagination-sm mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Anterior"><span
+                                            aria-hidden="true">&laquo;</span></a>
+                                </li>
+                                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Próximo"><span
+                                            aria-hidden="true">&raquo;</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div><!-- fim col conteúdo -->
+        </div><!-- fim row -->
+    </div><!-- fim container-fluid -->
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalCadastroLabel">Cadastrar Novo Aluno</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" id="formCadastro" novalidate>
+
+                        <div class="mb-3">
+                            <label for="nomeCompleto" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeCompleto" placeholder="Ex: João da Silva"
+                                required>
+                            <div class="invalid-feedback">Por favor, informe o nome completo.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="selectCurso" class="form-label">Curso</label>
+                            <select class="form-select" id="selectCurso" required>
+                                <option value="" selected disabled>Selecione um curso...</option>
+                                <option value="dev-web">Desenvolvimento Web</option>
+                                <option value="data-science">Data Science com Python</option>
+                                <option value="ui-ux">UI/UX Design</option>
+                                <option value="marketing">Marketing Digital</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecione um curso.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
+                            <input class="form-control" type="file" id="fotoPerfil" accept="image/*">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-dark" id="btnSalvar">Salvar Aluno</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('btnSalvar').addEventListener('click', function () {
+            var form = document.getElementById('formCadastro');
+            form.classList.add('was-validated');
+            if (form.checkValidity()) {
+                bootstrap.Modal.getInstance(document.getElementById('modalCadastro')).hide();
+                form.reset();
+                form.classList.remove('was-validated');
+            }
+        });
+    </script>
+</body>
+
+</html>
